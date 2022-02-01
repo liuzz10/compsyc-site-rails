@@ -1,0 +1,18 @@
+
+<h1>Videos</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Key words</th>
+      <th scope="col">Upload at</th>
+      <th scope="col">Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @videos.each do |video| %>
+      <%= render video %>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New video", new_video_path %>

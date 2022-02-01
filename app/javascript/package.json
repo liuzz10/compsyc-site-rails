@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@hotwired/turbo": "https://github.com/hotwired/turbo/archive/dev-builds/latest.tar.gz"
+  }
+}
