@@ -15,4 +15,7 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "New video", new_video_path %>
+<%# <%= debug(current_user) %>
+<% if current_user && current_user.role == "admin" %>
+  <%= link_to "New video", new_video_path %>
+<% end %>
