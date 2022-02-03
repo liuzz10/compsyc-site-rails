@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+.top-bar {
+  background: #141b2d;
+}
+
+.top-bar ul {
+  background-color: #141b2d;
+}
+
+.top-bar a {
+  color: #f4e1f5;
+}
+
+.top-bar a:hover {
+  color: #e79bec;
+}
+
+.navbar-brand {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-btn {
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.5em;
+}
