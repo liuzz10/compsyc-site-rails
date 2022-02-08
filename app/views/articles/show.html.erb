@@ -1,6 +1,6 @@
-<h1><%= @article.title %></h1>
+<div class="callout"><h2><%= @article.title %></h2></div>
 
-<p><%= @article.body %></p>
+<%= RedCloth.new(@article.body).to_html.html_safe %>
 
 <% if current_user && current_user.role == "admin" %>
     <ul>
@@ -12,10 +12,11 @@
     </ul>
 <% end %>
 
+<hr>
 <h2>Comments</h2>
 <%= render @article.comments %>
 
-
+<hr>
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 

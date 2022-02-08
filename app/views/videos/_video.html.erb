@@ -1,8 +1,19 @@
 <div id="<%= dom_id video %>">
-  <tr>
-    <th scope="row"><%= video.title%></th>
-    <td><%= video.key_word%></td>
-    <td><%= video.upload_at%></td>
-    <td><%= link_to "Show this video", video %></td>
-  </tr>
+  <% if !(current_user && current_user.role == "admin") %>
+    <tr>
+      <th scope="row"><%= video.title%></th>
+      <td><%= video.key_word%></td>
+      <td><%= video.upload_at%></td>
+      <td><%= link_to "Youtube Link", video.url%></td>
+    </tr>
+  <% else %>
+    <tr>
+      <th scope="row"><%= video.title%></th>
+      <td><%= video.key_word%></td>
+      <td><%= video.upload_at%></td>
+      <td><%= link_to "Youtube Link", video.url%></td>
+      <td><%= link_to "Edit", edit_video_path(video) %></td>
+      <td><%= link_to "Destroy", video, method: :delete %></td>
+    </tr>
+  <% end %>
 </div>

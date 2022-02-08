@@ -3,8 +3,9 @@
 <%= render @video %>
 
 <div>
-  <%= link_to "Edit this video", edit_video_path(@video) %> |
-  <%= link_to "Back to videos", videos_path %>
-
+<%= link_to "Back to videos", videos_path %>
+<% if current_user && current_user.role == "admin" %>
+  <%= link_to "Edit this video", edit_video_path(@video) %>
   <%= button_to "Destroy this video", @video, method: :delete %>
+<% end %>
 </div>

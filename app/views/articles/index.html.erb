@@ -1,18 +1,18 @@
 <h1>Articles</h1>
 
-<%= Article.public_count %> articles in total.
-
-
-<ul>
-    <% @articles.each do |article| %>
-        <% unless article.archived? %>
-            <li>
+<%= Article.public_count %> articles in total
+<br>
+<br>
+<% @articles.each do |article| %>
+    <% unless article.archived? %>
+        <div class="callout">
+            <p>
                 <%= link_to article.title, article %>
-            </li>
-        <% end %>
+            </p>
+        </div>
     <% end %>
-</ul>
+<% end %>
 
 <% if current_user && current_user.role == "admin" %>
-    <%= link_to "New Article", new_article_path %>
+    <%= link_to "New Article", new_article_path, :class => "hollow button secondary" %>
 <% end %>

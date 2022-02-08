@@ -46,9 +46,17 @@ gem "bootsnap", require: false
 
 gem "foundation-rails"
 
+gem "font-awesome-rails"
+
 gem 'autoprefixer-rails'
 
 gem 'jquery-rails'
+
+gem 'RedCloth'
+
+gem 'pry', '~> 0.13.1'
+
+gem 'pry-byebug'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

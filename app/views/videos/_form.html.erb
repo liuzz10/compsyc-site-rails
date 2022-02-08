@@ -26,9 +26,14 @@
     <%= form.date_field :upload_at, class:"form-control" %>
   </div>
 
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url, class:"form-control" %>
+  </div>
+
   <br>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit :class => "hollow button secondary"%>
   </div>
 <% end %>

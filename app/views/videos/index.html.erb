@@ -2,12 +2,23 @@
 <h1>Videos</h1>
 <table class="table">
   <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">Key words</th>
-      <th scope="col">Upload at</th>
-      <th scope="col">Link</th>
-    </tr>
+    <% if !(current_user && current_user.role == "admin") %>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Key words</th>
+        <th scope="col">Upload at</th>
+        <th scope="col">Link</th>
+      </tr>
+    <% else %>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Key words</th>
+        <th scope="col">Upload at</th>
+        <th scope="col">Link</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Destroy</th>
+      </tr>
+    <% end %>
   </thead>
   <tbody>
     <% @videos.each do |video| %>
@@ -17,5 +28,5 @@
 </table>
 <%# <%= debug(current_user) %>
 <% if current_user && current_user.role == "admin" %>
-  <%= link_to "New video", new_video_path %>
+  <%= link_to "New video", new_video_path, :class => "hollow button secondary"%>
 <% end %>

@@ -14,6 +14,10 @@
  *= require_self
  */
 
+/*
+*= require font-awesome
+*/
+
 .top-bar {
   background: #141b2d;
 }
@@ -51,4 +55,16 @@ h1 {
 
 h2 {
   font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+}
+
+.comment-container {
+  padding: 1em;
+  margin: 1em;
+  border: 1px solid #eeeeee;
+  align-items: center;
 }
