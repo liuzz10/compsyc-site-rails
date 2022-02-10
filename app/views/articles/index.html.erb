@@ -6,6 +6,11 @@
 <% @articles.each do |article| %>
     <% unless article.archived? %>
         <div class="callout">
+            <% article.keywords.each do |keyword| %>
+                <%= render(ProgressBadgeComponent.new(status: keyword.word)) do %>
+                    <% keyword.word %>
+                <% end %>
+            <% end %>
             <p>
                 <%= link_to article.title, article %>
             </p>

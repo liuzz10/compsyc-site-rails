@@ -8,6 +8,11 @@
   </div>
 
   <div>
+    <%= form.label :Keyword %><br>
+    <%= form.collection_check_boxes(:keyword_ids, Keyword.order(:word), :id, :word) %>
+  </div>
+
+  <div>
     <%= form.label :status %><br>
     <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
   </div>

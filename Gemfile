@@ -44,15 +44,19 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "foundation-rails"
-
 gem "font-awesome-rails"
+
+gem "view_component"
 
 gem 'autoprefixer-rails'
 
 gem 'jquery-rails'
 
 gem 'RedCloth'
+
+gem 'foundation-rails', git: 'https://github.com/AquisTech/foundation-rails.git', branch: 'bugfix-281-fix-js-base-dir-for-install-generator'
+
+gem 'autoprefixer-rails'
 
 gem 'pry', '~> 0.13.1'
 

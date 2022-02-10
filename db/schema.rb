@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_07_232017) do
+ActiveRecord::Schema.define(version: 2022_02_09_233847) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2022_02_07_232017) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
+    t.text "keyword"
+  end
+
+  create_table "articles_keywords", id: false, force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "keyword_id"
+    t.index ["article_id"], name: "index_articles_keywords_on_article_id"
+    t.index ["keyword_id"], name: "index_articles_keywords_on_keyword_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -28,6 +36,12 @@ ActiveRecord::Schema.define(version: 2022_02_07_232017) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "keywords", force: :cascade do |t|
+    t.string "word"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

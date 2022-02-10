@@ -8,6 +8,8 @@ class TurboController < ApplicationController
         elsif has_errors? && default_action
           render rendering_options.merge(formats: :html, status: :unprocessable_entity)
         else
+          p "navigation_location"
+          p navigation_location
           redirect_to navigation_location
         end
       end

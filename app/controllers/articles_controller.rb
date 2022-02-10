@@ -14,8 +14,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    puts "article_params"
-    puts article_params
     @article = Article.new(article_params)
 
     if @article.save
@@ -47,7 +45,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+  # Form with checkboxes
+  # => params { title: 'h', body: 'b', status: 'public', keyword_ids: [1, 3, 4] }
+  # article.update(params)
+  # => article.title = 'h', article.body = 'b', article.status = 'public', article.keyword_ids = [1, 3, 4]
     def article_params
-      params.require(:article).permit(:title, :body, :status)
+      params.require(:article).permit(:title, :body, :status, { keyword_ids: [] })
     end
 end
